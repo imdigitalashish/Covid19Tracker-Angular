@@ -29,6 +29,14 @@ export class CountriesComponent implements OnInit {
 
   updateValues(country: string) {
     console.log(country);
+    this.data.forEach(cs => {
+      if (cs.country === country) {
+        this.totalActive = cs.active;
+        this.totalDeaths = cs.deaths;
+        this.totalConfirmed = cs.confirmed;
+        this.totalRecovered = cs.recovered;
+      }
+    });
   }
 
 }
